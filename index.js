@@ -1,12 +1,15 @@
 let data = {
-    questions: [['first question', 'first answer'],['second question', 'second answer'],['third question','third answer'],['fourth question','fourth answer'],['fifth questions','fifth answer']]
+    questions: [['What is the color of the sun', 'Yellow']]
 }
 // Getting our localStorage on!
-// let getData = JSON.parse(localStorage.getItem('storeObj'))
-// data = getData
+let getData = JSON.parse(localStorage.getItem('storeObj'))
+if(getData !== null){
+    data = getData
+}
+console.log(getData)
 // Here we create a function that randomly shows the questions on the flashcard with the right answers after.
 let card = document.getElementById('flashcard')
-let flip = 0
+let flip = 1
 let randomCard = 0
 function flipCard() {
     if(flip === 0) {
