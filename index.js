@@ -27,6 +27,9 @@ function input() {
     const answer = document.getElementById('answer')
     const questionInput = question.value
     const answerInput = answer.value
+    if(doesNotPassAllValidations(questionInput, answerInput)){
+        return null
+    }
     data.questions.push([questionInput, answerInput])
     question.value = null
     answer.value = null
@@ -37,5 +40,12 @@ function storeLocal() {
     localStorage.setItem('storeObj', JSON.stringify(data))
     let getData = JSON.parse(localStorage.getItem('storeObj'))
     data = getData
+}
+function doesNotPassAllValidations(question, answer) {
+    if (!question || !answer) {
+        alert('There is no question or answer!')
+        return true
+    }
+    return false
 }
 
