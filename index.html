@@ -7,9 +7,29 @@
     </head>
     <body>
         <header>E&K's Flashcard App!!!</header>
-        <section id="flashcard">
-            <p onclick="flipCard()">Card here</p>
+        <section  onclick="flipCard()">
+            <p id="flashcard">Card here</p>
         </section>
+        <form onsubmit="input(); return false">
+            <div>
+                <label for="question">Question:</label>
+                <textarea name="Question" id="question"></textarea>
+            </div>
+            <div>
+                <label for="answer">Answer:</label>
+                <textarea name="Answer" id="answer"></textarea>
+
+            </div>
+            <div class="Button">
+                <button type="default">Submit!</button>
+            </div>
+
+
+
+
+
+        </form>
+
     </body>
     <script src="index.js"></script>
     </html>

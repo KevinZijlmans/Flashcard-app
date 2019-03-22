@@ -1,14 +1,29 @@
-let questions = ['first question', 'first answer']
+let questions = [['first question', 'first answer'],['second question', 'second answer'],['third question','third answer'],['fourth question','fourth answer'],['fifth questions','fifth answer']]
+
+
+// Java Script Object Notation
+console.log(JSON.stringify(questions))
+
+
 let card = document.getElementById('flashcard')
 let flip = 0
-console.log(flip)
+let randomCard = 0
 function flipCard() {
     if(flip === 0) {
-        card.innerHTML = questions[flip]
         flip = 1
-        console.log(flip)
-        return flip
+        card.innerHTML = questions[randomCard][flip]
+        randomCard = Math.floor(Math.random()*questions.length)
+    } else {
+        flip = 0
+        card.innerHTML = questions[randomCard][flip]
     }
 }
-card.onclick = flipCard()
-console.log(flip)
+function input() {
+    const question = document.getElementById('question')
+    const answer = document.getElementById('answer')
+    const questionInput = question.value
+    const answerInput = answer.value
+    console.log(questionInput, answerInput)
+    questions.push([questionInput, answerInput])
+    console.log(questions)
+}
